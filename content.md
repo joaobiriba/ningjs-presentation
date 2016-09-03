@@ -20,14 +20,16 @@
 
 ------
 
-# Virtual Reality  <!-- .element: data-autoslide="0" class="fragment fade-out" -->
+# Virtual Reality
 
 <!-- .slide: data-autoslide="5000" data-background-video="media/video/virtualreality.mp4" data-background-video-loop="true" data-background-video-muted="true" data-state="state--bg-dark" -->
 
 <!-- NOTES -->
+- How many have tried? Hong Kong cafe
 - Virtual reality is a technology platform that transports you to realistic, interactive, immersive 3D environments
 - It's the next platform, will change how we work + play + communicate digitally, face of society
 - Ping Pong brother
+- Yao Ming
 
 ---
 
@@ -329,6 +331,12 @@ A declarative framework for building virtual reality experiences on the Web
 - And view source in DOM inspector and change values live
 - Can go fullscreen, would go into VR if a headset was connected
 - Can view on mobile if people go to aframe.io
+
+---
+
+## tiny.cc/ningjs
+
+<div class="stretch" data-aframe-scene="scenes/multiuser.html"></div>
 
 ---
 
