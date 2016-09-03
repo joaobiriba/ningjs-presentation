@@ -4,7 +4,7 @@
   <h1>A-Frame</h1>
   <h2>Building VR on the Web</h2>
   <p class="talk-info">
-    GitHub:ngokevin / Mozilla VR / NingJS 2016 / aframe.io
+    github.com/ngokevin | mozvr.com | aframe.io
   </p>
 </div>
 
@@ -22,14 +22,32 @@
 
 # Virtual Reality
 
-<!-- .slide: data-autoslide="5000" data-background-video="media/video/virtualreality.mp4" data-background-video-loop="true" data-background-video-muted="true" data-state="state--bg-dark" -->
+<!-- .slide: data-background-video="media/video/virtualreality.mp4" data-background-video-loop="true" data-background-video-muted="true" data-state="state--bg-dark" -->
 
 <!-- NOTES -->
 - How many have tried? Hong Kong cafe
 - Virtual reality is a technology platform that transports you to realistic, interactive, immersive 3D environments
 - It's the next platform, will change how we work + play + communicate digitally, face of society
+
+---
+
+# Fun!
+
+<!-- .slide: data-background="media/img/vrshooting.jpg" data-state="state--bg-dark" -->
+
+<!-- NOTES -->
 - Ping Pong brother
 - Yao Ming
+
+---
+
+# On the Plane
+
+<!-- .slide: data-background="media/img/vrplane.jpg" data-state="state--bg-dark" -->
+
+<!-- NOTES -->
+- Long flight here, I'm in a cinema or floating down a river
+- Baby crying, seat back in my face, don't care
 
 ---
 
@@ -351,6 +369,7 @@ A declarative framework for building virtual reality experiences on the Web
 <!-- NOTES -->
 - Handful elements that ship with A-Frame, but this is just the start
 - Pretty easy to get a WebVR scene up and running
+- Go back to the multiuser
 
 ---
 
@@ -755,7 +774,7 @@ const animationProps = {attribute: 'rotation', loop: true, to: '0 360 0'};
 
 ------
 
-# Ecosystem
+# Community
 
 <div class="captioned-image-row">
   <div>
