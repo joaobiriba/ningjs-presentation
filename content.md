@@ -38,6 +38,7 @@
 <!-- NOTES -->
 - Ping Pong brother
 - Yao Ming
+- Fruit Ninja
 
 ---
 
@@ -124,12 +125,12 @@ Open:
 
 Connected:
 - Traverse worlds
-- Great for long tail bite-sized experiences
 
 Instant:
 - Click a link on Twitter or Weibo, immediate VR experiences
 - No installs
 - Imagine for long tail experiences: shopping & personal spaces
+- Great for long tail bite-sized experiences
 
 Transition:
 - Web has advantages that make it the best platform for the people
@@ -155,21 +156,6 @@ History:
 - Working W3C community group
 - Mozilla, Google, Samsung, Microsoft, community currently iterating WebVR 1.0 API
 
----
-
-```js
-const position, orientation, vrDisplay;
-
-navigator.getVRDisplays().then(function (displays) {
-  if (displays.length > 0) {
-    vrDisplay = displays[0];
-    {position, orientation} = vrDisplay.getPose();
-    vrDisplay.requestPresent([{source: canvas}]);
-  }
-});
-```
-
-<!-- NOTES -->
 Not just a specification, it's implemented...
 
 ---
@@ -304,11 +290,11 @@ scene.add(box);
 A declarative framework for building virtual reality experiences on the Web
 
 <!-- NOTES -->
-- Easy for web developers to create VR content, without graphics knowledge
-- Prototype and experiment WebVR and VR UX faster
-- Vehicle to kickstart WebVR ecosystem
-- Going to go into the concepts and specifics of the framework and its APIs, so you can
-  go home and start playing with it...
+- Launched last December
+- Why:
+  - Easy for web developers to create VR content, without graphics knowledge
+  - Prototype and experiment WebVR and VR UX faster
+  - Vehicle to kickstart WebVR ecosystem
 
 ---
 
@@ -329,7 +315,7 @@ A declarative framework for building virtual reality experiences on the Web
 
 <!-- NOTES -->
 - Simple HTML markup for a basic scene
-- XYZ position, rotation
+- Remember to manipulate on second display
 - Readable: HTML arguably most accessible language in computing
 - Declarative: visual representation of scene graph, fully represents state
 - Encapsulated: copy-and-paste HTML anywhere else and still work, no variables
@@ -345,16 +331,55 @@ A declarative framework for building virtual reality experiences on the Web
 
 <!-- NOTES -->
 - As web technology, we can embed within slides
-- You can view this in desktop, Android, iOS, Samsung Gear VR, Oculus Rift, HTC Vive
-- And view source in DOM inspector and change values live
-- Can go fullscreen, would go into VR if a headset was connected
-- Can view on mobile if people go to aframe.io
+- Can view this in desktop, Android, iOS, Samsung Gear VR, Oculus Rift, HTC Vive
+- View source in DOM inspector and change values live
+- Based on DOM, compatible with all libraries/frameworks: d3.js, Vue.js, React
+
+---
+
+## MagicaVoxel
+
+<!-- .slide: data-transition="slide-in none" -->
+
+<img data-src="media/img/magicavoxel.png">
+
+<!-- NOTES -->
+- Can create scenes with MagicaVoxel
+- Super easy tool, drop blocks like Minecraft
+- Then export to A-Frame
+- Everything in previous talk, works in A-Frame as well
+
+---
+
+## MagicaVoxel
+
+<!-- .slide: data-transition="none" -->
+
+<div class="stretch" data-aframe-scene="scenes/magicavoxel.html"></div>
+
+<!-- NOTES -->
+- MagicaVoxel model in A-Frame, mostly a line of HTML
+- Show off the A-Frame Inspector by pressing `<ctrl> + <alt> + i`
+
+---
+
+## MagicaVoxel
+
+<!-- .slide: data-transition="none" -->
+
+<div class="stretch" data-aframe-scene="scenes/pokemon.html"></div>
+
+<!-- NOTES -->
+- Remember to manipulate and open inspector on second display
 
 ---
 
 ## tiny.cc/ningjs
 
 <div class="stretch" data-aframe-scene="scenes/multiuser.html"></div>
+
+<!-- NOTES -->
+- QR code was genius
 
 ---
 
@@ -535,25 +560,25 @@ A declarative framework for building virtual reality experiences on the Web
 
 ---
 
-## Basic Component
+## Writing a Component
 
 ```js
-AFRAME.registerComponent('position', {
-  schema: {type: 'vec3'},
+AFRAME.registerComponent('my-component', {
+  schema: {
+    foo: {type: 'selector'},
+    bar: {default: 256}
+  },
 
-  update: function () {
-    var el = this.el;
-    var data = this.data;
-    var object3D = el.object3D;
-
-    object3D.position.set(data.x, data.y, data.z);
-  }
+  init: function () { // ... },
+  update: function () { // ... },
+  remove: function () { // ... },
+  tick: function () { // ... }
 });
 ```
 <!-- .element: class="stretch" -->
 
 ```html
-<a-box position="-1 1 1"></a-box>
+<a-box my-component="foo: #box; bar: 300""></a-box>
 ```
 
 <!-- NOTES -->
@@ -584,193 +609,6 @@ AFRAME.registerComponent('position', {
 - Components built by the community and ecosystem
 - Developers enabling others
 - Components can be consumed without programming knowledge
-
-------
-
-# Integration
-
-```js
-const scene = document.querySelector('a-scene');
-
-const entity = document.createElement('a-sphere');
-
-entity.setAttribute('radius', 2);
-
-entity.addEventListener('click', function () {
-  entity.setAttribute('color', 'red');
-});
-
-entity.appendChild(sphere);
-```
-<!-- .element: class="stretch" -->
-
-<!-- NOTES -->
-- Integrates with web languages and APIs
-- Fully controllable through JavaScript and DOM APIs
-
----
-
-<div class="captioned-image-row">
-  <div>
-    <img data-src="media/img/d3.png">
-    <i>d3.js</i>
-  </div>
-  <div>
-    <img data-src="media/img/vue.png">
-    <i>vue.js</i>
-  </div>
-  <div>
-    <img data-src="media/img/react.png">
-    <i>React & Redux</i>
-  </div>
-</div>
-
-<!-- NOTES -->
-- Based on DOM
-- Can integrate with existing libraries and web frameworks
-
----
-
-## d3.js
-
-<!-- .slide: data-transition="slide-in none" -->
-
-```js
-d3.selectAll('.day')
-  .data(getDaysOfThisYear)
-  .enter()
-  .append('a-entity')
-  .attr('position', function (dateStr) {
-    return {
-      x: __getXPosition(dateStr),
-      y: __getYPosition(dateStr),
-      z: __getZPosition(dateStr)
-    };
-  })
-  .attr('geometry', function (dateStr) {
-    return {
-      primitive: 'box',
-      depth: SIZE,
-      height: DATA[dateStr],
-      width: SIZE
-    };
-  }
-  .attr('material', function (dateStr) {
-    return {color: getColor(DATA[dateStr])};
-  });
-```
-<!-- .element: class="stretch" -->
-
----
-
-## d3.js
-
-<!-- .slide: data-transition="none" -->
-
-<div class="stretch" data-aframe-scene="scenes/d3.html"></div>
-
----
-
-## Vue.js
-
-```html
-<a-scene>
-  <a-sphere v-bind:position="spherePositionAttr"></a-sphere>
-</a-scene>
-```
-
-```js
-var Scene = new Vue({
-  el: 'a-scene',
-  data: {
-    sphere: {position: '0 0 -1'}
-  },
-  computed: {
-    spherePositionAttr () {
-      const pos = this.sphere.position;
-      return `${pos.x} ${pos.y} ${pos.z}`;
-    }
-  }
-});
-```
-
----
-
-## React
-
-```js
-import {Entity, Scene} from 'aframe-react'
-
-const animationProps = {attribute: 'rotation', loop: true, to: '0 360 0'};
-
-<Scene>
-  <Entity
-    geometry={{primitive: 'box'}}
-    material={{color: 'red'}}
-    {...animationProps}
-  />
-  <Entity
-    obj-model={{obj: #monsterObj, mtl: #monsterMtl}}
-    position="0 0 -5"
-    scale="2 2 2"
-  />
-</Scene>
-```
-<!-- .element: class="stretch" -->
-
----
-
-<div class="captioned-image-row">
-  <div>
-    <img data-src="media/img/magicavoxel-circle.png">
-    <i>MagicaVoxel</i>
-  </div>
-  <div>
-    <img data-src="media/img/blender.png">
-    <i>Blender</i>
-  </div>
-  <div>
-    <img data-src="media/img/maya.png">
-    <i>Maya</i>
-  </div>
-</div>
-
-<!-- NOTES -->
-- Can be used alongside 3D tools
-- Create models and scenes to place into A-Frame
-
----
-
-## MagicaVoxel
-
-<!-- .slide: data-transition="slide-in none" -->
-
-<img data-src="media/img/magicavoxel.png">
-
-<!-- NOTES -->
-- Can create scenes with MagicaVoxel
-- Super easy tool, drop blocks like Minecraft
-- Then export to A-Frame
-
----
-
-## MagicaVoxel
-
-<!-- .slide: data-transition="none" -->
-
-<div class="stretch" data-aframe-scene="scenes/magicavoxel.html"></div>
-
-<!-- NOTES -->
-- MagicaVoxel model in A-Frame, mostly a line of HTML
-- Show off the A-Frame Inspector by pressing `<ctrl> + <alt> + i`
-
----
-
-## MagicaVoxel
-
-<!-- .slide: data-transition="none" -->
-
-<div class="stretch" data-aframe-scene="scenes/pokemon.html"></div>
 
 ------
 
@@ -861,6 +699,7 @@ iStaging
 # Help Invent the Future  <!-- .element: style="color: #FFF" -->
 
 - Try it out [aframe.io](https://aframe.io)
+- See what people have made [aframe.io/blog](https://aframe.io/blog)
 - Join us on Slack [aframevr-slack.herokuapp.com](https://aframevr-slack.herokuapp.com/)
 - Follow us [@aframevr](https://twitter.com/aframevr)
 - Contribute on [github.com/aframevr/aframe](https://github.com/aframevr/aframe)
