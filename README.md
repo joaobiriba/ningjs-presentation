@@ -20,15 +20,11 @@ Presentation materials for NingJS talk - "Building Virtual Reality on the Web"
 - A-Frame
   - Introduction
   - Hello World
-  - Primitives
+  - Multiuser Demo
 - Entity-Component-System
   - Concept
   - Composing an Entity
-  - Writing a Component
-- Integration
-  - JavaScript
-  - Libraries & Frameworks
-  - 3D Tools
+  - Structure of a Component
 - Ecosystem
   - Community
   - Components
