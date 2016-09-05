@@ -12,7 +12,8 @@ Reveal.initialize({
       hljs.initHighlightingOnLoad();
     }}
   ],
-  margin: 0
+  margin: 0,
+  showNotes: false
 });
 
 // Fix Markdown wrapping <img> in <p>.
