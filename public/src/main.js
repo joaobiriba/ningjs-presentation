@@ -1,18 +1,10 @@
 var sceneCache = {};
 
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyApQY-Ley5-D5u3zvFmSENla8aUf22nUX0",
-    authDomain: "aframepresent.firebaseapp.com",
-    databaseURL: "https://aframepresent.firebaseio.com",
-    storageBucket: "aframepresent.appspot.com",
-    messagingSenderId: "966908679025"
-  };
-  firebase.initializeApp(config);
-  var ref = firebase.database().ref();
-
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
+  controls: false,
+  touch: false,
+  keyboard: false,
   history: true,
   // https://github.com/hakimel/reveal.js#dependencies
   dependencies: [
@@ -27,12 +19,57 @@ Reveal.initialize({
   showNotes: false
 });
 
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyApQY-Ley5-D5u3zvFmSENla8aUf22nUX0",
+    authDomain: "aframepresent.firebaseapp.com",
+    databaseURL: "https://aframepresent.firebaseio.com",
+    storageBucket: "aframepresent.appspot.com",
+    messagingSenderId: "966908679025"
+  };
+  firebase.initializeApp(config);
+  var ref = firebase.database().ref();
+  var provider = new firebase.auth.GoogleAuthProvider();
+  var isgiovanni=false;
+  provider.addScope('https://www.googleapis.com/auth/plus.login');
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    if ( user.uid === "e4Qn2GkXKASZOwzYC2Ll6YtuThv1") {
+      console.log("OK il login giovanni");
+      isgiovanni = true;
+       Reveal.configure({ controls: true , keyboard: true, touch: true})
+    }
+    // ...
+  }).catch(function(error) {
+    // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // [START_EXCLUDE]
+            if (errorCode === 'auth/account-exists-with-different-credential') {
+              alert('You have already signed up with a different auth provider for that email.');
+              // If you are using multiple auth providers on your app you should handle linking
+              // the user's accounts here.
+            } else {
+              console.error(error);
+            }
+  });
+
+
 // 'slidechanged' event listener to update the firebase JSON whenever there is a change in slide.
 // This can be further improved to have firebase authentication to restrict slide update only by the presenter.
 Reveal.addEventListener( 'slidechanged', function( event ) {
+  if ( isgiovanni ) {
   ref.set({currentslideX : Reveal.getState().indexh,
          currentslideY : Reveal.getState().indexv
         })
+  }
 });
 
 // Fix Markdown wrapping <img> in <p>.

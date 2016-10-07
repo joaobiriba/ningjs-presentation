@@ -2,21 +2,17 @@
 
 <div class="talk-title">
   <h1>A-Frame</h1>
-  <h2>Building VR on the Web</h2>
+  <h3>in the Virtual World</h3>
+  <h3>small bricks of virtual reality web</h3>
   <p class="talk-info">
-    github.com/ngokevin | mozvr.com | aframe.io
+    Giovanni Laquidara glaquidara@gmail.om
   </p>
 </div>
 
 <!-- NOTES -->
-- Kevin from San Francisco
-- Developer on Mozilla VR
-- Goal: bring high-performance VR to the Web, creating an open/connected VR platform
-- WebVR, why we need VR on the Web, and how to build WebVR experiences
 
----
 
-<!-- .slide: class="slide__title" data-background="media/img/wedding.jpg" -->
+
 
 ------
 
@@ -42,9 +38,9 @@
 
 ---
 
-# On the Plane
+# What an Experience!
 
-<!-- .slide: data-background="media/img/vrplane.jpg" data-state="state--bg-dark" -->
+<!-- .slide: data-background="media/img/nowvr.png" data-state="state--bg-dark" -->
 
 <!-- NOTES -->
 - Long flight here, I'm in a cinema or floating down a river
@@ -94,7 +90,14 @@
 - Downloads / installs are a barrier to consumption: small business pages
 - Closed ecosystem: proprietary engines, steep learning curves, siloed experiences, fragmentation
 - We want VR to be successful, so we want a platform without these points of friction. The answer is WebVR...
+---
+<!-- .slide: data-background="media/img/unreal.png" data-state="state--bg-dark" -->
 
+---
+<!-- .slide: data-background="media/img/unity.png" data-state="state--bg-dark" -->
+
+---
+<!-- .slide: data-background="media/img/doctors.png" data-state="state--bg-dark" -->
 ------
 
 # WebVR
@@ -371,15 +374,6 @@ A declarative framework for building virtual reality experiences on the Web
 
 <!-- NOTES -->
 - Remember to manipulate and open inspector on second display
-
----
-
-## tiny.cc/ningjs
-
-<div class="stretch" data-aframe-scene="scenes/multiuser.html"></div>
-
-<!-- NOTES -->
-- QR code was genius
 
 ---
 
@@ -694,14 +688,14 @@ iStaging
 
 ------
 
-<!-- .slide: class="slide__questions" data-background="media/img/scene-collage.jpg" style="background-color: rgba(30, 30, 30, 0.3)" -->
+<!-- .slide: class="slide__questions" data-background="media/img/scene-collage.jpg" style="background-color: rgba(30, 30, 30, 0.9)" -->
 
 # Help Invent the Future  <!-- .element: style="color: #FFF" -->
 
 - Try it out [aframe.io](https://aframe.io)
 - See what people have made [aframe.io/blog](https://aframe.io/blog)
 - Join us on Slack [aframevr-slack.herokuapp.com](https://aframevr-slack.herokuapp.com/)
-- Follow us [@aframevr](https://twitter.com/aframevr)
+- Follow A-Frame [@aframevr](https://twitter.com/aframevr)
 - Contribute on [github.com/aframevr/aframe](https://github.com/aframevr/aframe)
 
 <!-- NOTES -->
