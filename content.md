@@ -1,22 +1,18 @@
 <!-- .slide: class="slide__title" data-background-video="media/video/aframe-logo.mp4" data-background-video-loop="true" data-state="state--bg-blue" -->
 
 <div class="talk-title">
-  <h1>A-Frame</h1>
-  <h2>Building VR on the Web</h2>
+  <h3>A-Frame in the Virtual World</h3>
+  <h4>small bricks of virtual reality web</h4>
   <p class="talk-info">
-    github.com/ngokevin | mozvr.com | aframe.io
+    github.com/joaobiriba | Codemotion Milan 2016
   </p>
 </div>
 
 <!-- NOTES -->
-- Kevin from San Francisco
-- Developer on Mozilla VR
-- Goal: bring high-performance VR to the Web, creating an open/connected VR platform
+- Giovanni Laquidara
+- Mobile developer, some web development experience, passionate about VR
+- Goal: How to develop VR experience in an easy way
 - WebVR, why we need VR on the Web, and how to build WebVR experiences
-
----
-
-<!-- .slide: class="slide__title" data-background="media/img/wedding.jpg" -->
 
 ------
 

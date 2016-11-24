@@ -64,10 +64,12 @@ html:-moz-full-screen-ancestor {
   font-size: 1.6em; }
 
 .reveal h3 {
-  font-size: 1.3em; }
+  font-size: 1.3em;
+  color: #ffffff; }
 
 .reveal h4 {
-  font-size: 1em; }
+  font-size: 1em;
+  color: #ffffff; }
 
 .reveal h1 {
   text-shadow: none; }
@@ -405,9 +407,9 @@ body:not(.aframe-inspector-opened) .toggle-edit {
 }
 
 .slide__title .talk-info {
-  font-weight: 200;
+  font-weight: 100;
   position: relative;
-  top: 70%;
+  top: 50%;
 }
 
 div.slide__boilerplate {
