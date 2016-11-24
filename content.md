@@ -65,9 +65,32 @@
 - Range from cheap to expensive, tethered and untethered, controllers, tracking
 - HTC Vive with Steam currently offers the most compelling experiences, but never know
 - See a lot of different devices, systems, platforms competing against each other...
-
 ---
 
+# Development
+
+<!-- .slide: data-background="media/img/unit.png" data-state="state--bg-dark" -->
+
+<!-- NOTES -->
+- Unity
+
+
+---
+# Development
+
+<!-- .slide: data-background="media/img/unrealengine.png" data-state="state--bg-dark" -->
+
+<!-- NOTES -->
+- UE
+---
+# So hard!
+
+<!-- .slide: data-background="media/img/mad-scientist.jpeg" data-state="state--bg-dark" -->
+
+<!-- NOTES -->
+- Hard
+
+---
 ## Friction of VR Ecosystems
 
 <div class="captioned-image-row">
@@ -370,9 +393,9 @@ A declarative framework for building virtual reality experiences on the Web
 
 ---
 
-## tiny.cc/ningjs
+## https://goo.gl/trtDj7
 
-<div class="stretch" data-aframe-scene="scenes/multiuser.html"></div>
+<img data-src="media/img/conferenceqr.png">
 
 <!-- NOTES -->
 - QR code was genius
@@ -574,7 +597,7 @@ AFRAME.registerComponent('my-component', {
 <!-- .element: class="stretch" -->
 
 ```html
-<a-box my-component="foo: #box; bar: 300""></a-box>
+<a-box my-component="foo: #box; bar: 300"></a-box>
 ```
 
 <!-- NOTES -->
@@ -605,6 +628,12 @@ AFRAME.registerComponent('my-component', {
 - Components built by the community and ecosystem
 - Developers enabling others
 - Components can be consumed without programming knowledge
+
+---
+
+## https://goo.gl/18B8hi
+
+<img data-src="media/img/codemotionagenda.png">
 
 ------
 
