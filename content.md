@@ -393,12 +393,10 @@ A declarative framework for building virtual reality experiences on the Web
 
 ---
 
-## https://goo.gl/trtDj7
 
-<img data-src="media/img/conferenceqr.png">
+## https://goo.gl/18B8hi
 
-<!-- NOTES -->
-- QR code was genius
+<img data-src="media/img/codemotionagenda.png">
 
 ---
 
@@ -631,10 +629,12 @@ AFRAME.registerComponent('my-component', {
 
 ---
 
-## https://goo.gl/18B8hi
+## https://goo.gl/trtDj7
 
-<img data-src="media/img/codemotionagenda.png">
+<img data-src="media/img/conferenceqr.png">
 
+<!-- NOTES -->
+- QR code was genius
 ------
 
 # Community
@@ -642,15 +642,15 @@ AFRAME.registerComponent('my-component', {
 <div class="captioned-image-row">
   <div>
     <img data-src="media/img/github.png">
-    <i>60 contributors, 3000 Stargazers</i>
+    <i>88 contributors, 3996 Stargazers</i>
   </div>
   <div>
     <img data-src="media/img/slack.png">
-    <i>1400 members on Slack</i>
+    <i>2076 members on Slack</i>
   </div>
   <div>
     <img data-src="media/img/scene-collage-circle.png">
-    <i>100s of featured projects</i>
+    <i>300s of featured projects</i>
   </div>
 </div>
 
@@ -733,3 +733,33 @@ iStaging
 - Homepage which has examples, documentation, blog
 - Slack extremely active, core team responsive, over 1300 people
 - Keep up to date by following on Twitter
+
+---
+## Fantastic Problems and Where to Find Them
+<!-- .slide: data-background="media/img/fantastici.jpg" data-state="state--bg-dark" -->
+
+<div class="captioned-image-row">
+
+  <div>
+    <img data-src="media/img/ioinpomettinipresent.jpg">
+  </div>
+
+  <div>
+    <img data-src="media/img/pomettini.jpg">
+  </div>
+
+  <div>
+  <h4>giorgio.pomettini@gmail.com</h4>
+  </div>
+</div>
+
+---
+<!-- .slide: class="slide__title" data-background-video="media/video/aframe-logo.mp4" data-background-video-loop="true" data-state="state--bg-blue" -->
+
+<div class="talk-title">
+  <h3>Thanks</h3>
+  <h4>Questions???</h4>
+  <p class="talk-info">
+    github.com/joaobiriba | @joaolaq
+  </p>
+</div>
