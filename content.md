@@ -749,7 +749,10 @@ iStaging
   </div>
 
   <div>
-  <h4>giorgio.pomettini@gmail.com</h4>
+  <h4>Multiple scenes</h4>
+  <h4>Too detailed models and scenes</h4>
+  <h4>Sound component bug in fade</h4>
+  <h4>No component for preloading bar</h4>
   </div>
 </div>
 
